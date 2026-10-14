@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="pt-BR" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Torres Burguer & Boraçaí — Burgers Artesanais e Açaí em Cuiabá | Av. das Torres</title>
+<meta name="description" content="Torres Burguer & Boraçaí — Smash burgers artesanais e açaí gourmet no Jardim Imperial, Av. das Torres, Cuiabá-MT. Peça no WhatsApp e receba quentinho." />
+<meta name="theme-color" content="#0A0A0B" />
+<meta property="og:title" content="Torres Burguer & Boraçaí — Cuiabá" />
+<meta property="og:description" content="Lava Burger 🔥 + Açaí Elétrico 🟣. Peça em 1 min pelo WhatsApp." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+<link rel="preconnect" href="https://esm.sh" crossorigin />
+<link rel="preload" as="image" fetchpriority="high" href="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        ink: '#0A0A0B', card: '#121212', card2: '#1A1A1A',
+        lava: '#FF3D00', flame: '#FF5722', amberglow: '#FFB300',
+        berry: '#A855F7', deepberry: '#7E22CE', grape: '#2E1065'
+      },
+      fontFamily: {
+        display: ['"Plus Jakarta Sans"','Inter','system-ui','sans-serif'],
+        body: ['Inter','system-ui','sans-serif']
+      },
+      boxShadow: {
+        lavaglow: '0 0 24px rgba(255,61,0,.45), 0 8px 32px rgba(255,87,34,.25)',
+        berryglow: '0 0 24px rgba(168,85,247,.45), 0 8px 32px rgba(126,34,206,.30)',
+        card: '0 8px 32px rgba(0,0,0,.5)'
+      }
+    }
+  }
+}
+</script>
+<style>
+  html{scroll-behavior:smooth}
+  body{background:#0A0A0B;color:#F5F5F4;font-family:Inter,system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+  .font-display{font-family:"Plus Jakarta Sans",Inter,system-ui,sans-serif;letter-spacing:-0.04em}
+  .glass{background:rgba(18,18,18,.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.10)}
+  .glass-soft{background:rgba(26,26,26,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08)}
+  .text-gradient-lava{background:linear-gradient(92deg,#FFB300 0%,#FF5722 45%,#FF3D00 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .text-gradient-berry{background:linear-gradient(92deg,#E9D5FF 0%,#A855F7 50%,#7E22CE 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .text-gradient-mix{background:linear-gradient(92deg,#FF5722 0%,#FF3D00 25%,#A855F7 75%,#7E22CE 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{scrollbar-width:none}
+  /* shimmer skeleton for lazy images — zero CLS via aspect-ratio boxes */
+  .img-shell{position:relative;overflow:hidden;background:#1c1c1e}
+  .img-shell img{opacity:0;transition:opacity .6s ease}
+  .img-shell.loaded img{opacity:1}
+  .img-shell::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.08) 50%,transparent 70%);animation:shimmer 1.4s infinite;pointer-events:none}
+  .img-shell.loaded::after{display:none}
+  @keyframes shimmer{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .floaty{animation:floaty 5s ease-in-out infinite}
+  @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}50%{box-shadow:0 0 0 7px rgba(34,197,94,0)}}
+  .open-dot{animation:pulse-dot 1.8s infinite}
+  @keyframes ping-slow{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+  input,select,textarea{color-scheme:dark}
+  input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid rgba(255,87,34,.6);outline-offset:2px}
+  .tab-active-burger{box-shadow:0 0 18px rgba(255,61,0,.5)}
+  .tab-active-acai{box-shadow:0 0 18px rgba(168,85,247,.5)}
+  ::selection{background:rgba(255,61,0,.4)}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Torres Burguer & Boraçaí","servesCuisine":["Hamburgueria","Açaiteria"],"priceRange":"$","telephone":"+55-65-8427-0488","address":{"@type":"PostalAddress","streetAddress":"Av. das Torres, Jardim Imperial","addressLocality":"Cuiabá","addressRegion":"MT","addressCountry":"BR"},"openingHours":"Mo-Su 18:00-23:30"}
+</script>
+<script type="importmap">
+{"imports":{"react":"https://esm.sh/react@18.2.0","react-dom/client":"https://esm.sh/react-dom@18.2.0/client","framer-motion":"https://esm.sh/framer-motion@10.16.4?external=react,react-dom"}}
+</script>
+</head>
+<body>
+<div id="root"></div>
+
+<!-- ambient glows -->
+<div class="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
+  <div class="absolute -top-32 -left-32 h-[480px] w-[480px] rounded-full opacity-25 blur-[120px]" style="background:radial-gradient(circle,#FF3D00 0%,transparent 70%)"></div>
+  <div class="absolute top-1/3 -right-40 h-[520px] w-[520px] rounded-full opacity-25 blur-[130px]" style="background:radial-gradient(circle,#7E22CE 0%,transparent 70%)"></div>
+  <div class="absolute bottom-0 left-1/3 h-[380px] w-[600px] rounded-full opacity-10 blur-[120px]" style="background:radial-gradient(circle,#FF5722 0%,transparent 70%)"></div>
+</div>
+
+<script src="https://unpkg.com/@babel/standalone@7.23.5/babel.min.js"></script>
+<script type="text/babel" data-type="module" data-presets="react">
+import React, { useMemo, useRef, useState, useEffect } from "react";
+import { createRoot } from "react-dom/client";
+import { motion, AnimatePresence } from "framer-motion";
+
+/* ============================================================
+   TORRES BURGUER & BORAÇAÍ — Single-file production app
+   Stack: React 18 + Tailwind CDN + Framer Motion 10 (ESM)
+   Order engine → WhatsApp wa.me/556584270488
+   Security: sanitize + regex validation + 3s rate-limit lockout
+   Perf: aspect-ratio boxes (zero CLS) + lazy imgs + shimmer
+   ============================================================ */
+const WHATS_NUMBER = "556584270488";
+const DELIVERY_FEES = {
+  "Jardim Imperial": 5.00, "Av. das Torres": 5.00, "Tijucal": 7.00,
+  "Coxipó": 7.00, "Pedra 90": 9.00, "Jardim Universitário": 7.00,
+  "Centro": 9.00, "Retirada no local": 0.00
+};
+const NEIGHBORHOODS = Object.keys(DELIVERY_FEES);
+const NAME_RE = /^[A-Za-zÀ-ÖØ-öø-ÿ'’\s]{2,60}$/;
+const STREET_RE = /^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s\.\-\/,ºª]{5,120}$/;
+
+const sanitize = (s="") => String(s).replace(/[<>{}\[\]`$;\\]/g,"").replace(/\s{2,}/g," ").trim().slice(0,140);
+const brl = (v) => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const isOpenNow = () => { const h = new Date().getHours()+new Date().getMinutes()/60; return h>=18 || h<0.5 ? true : (h>=18 && h<=23.5); };
+
+const CATEGORIES = [
+  { id:"burgueres", label:"Burgueres Artesanais", theme:"burger", icon:"🔥" },
+  { id:"combos",    label:"Combos Smash",         theme:"burger", icon:"🍔" },
+  { id:"acai",      label:"Açaí & Copos Gourmet", theme:"acai",   icon:"🟣" },
+  { id:"acomp",     label:"Acompanhamentos",      theme:"neutral",icon:"🍟" },
+  { id:"bebidas",   label:"Bebidas",              theme:"neutral",icon:"🥤" },
+];
+
+const BURGER_EXTRAS = [
+  { id:"bacon", name:"Bacon extra crocante", price:6 },
+  { id:"cheddar", name:"Cheddar cremoso", price:5 },
+  { id:"onion", name:"Cebola caramelizada", price:4 },
+  { id:"egg", name:"Ovo + maionese da casa", price:4 },
+  { id:"double", name:"Blend 100g extra", price:9 },
+  { id:"barbecue", name:"Barbecue defumado", price:3 },
+];
+const ACAI_FREE = ["Banana","Morango","Granola","Leite Ninho","Paçoca","Bis","Ovomatine","Confete","Amendoim","Mel"];
+const ACAI_PAID = [
+  { id:"nutella", name:"Nutella original", price:7 },
+  { id:"ninho-extra", name:"Ninho extra", price:5 },
+  { id:"morango-extra", name:"Morango extra", price:6 },
+  { id:"whey", name:"Whey / Creatina boost", price:8 },
+  { id:"condensado", name:"Leite condensado", price:4 },
+];
+const ACAI_SIZES = [
+  { id:"300ml", label:"300ml", mult:1.0, free:3, desc:"Ideal p/ matar a vontade" },
+  { id:"500ml", label:"500ml", mult:1.35, free:4, desc:"O queridinho da casa" },
+  { id:"700ml", label:"700ml", mult:1.75, free:5, desc:"Modo Boraçaí ON" },
+];
+const GENERIC_ADDONS = [
+  { id:"ched", name:"Cheddar extra", price:5 },
+  { id:"bacon2", name:"Bacon extra", price:6 },
+  { id:"house", name:"Maionese da casa extra", price:3 },
+];
+
+const U = (id,w=800) => `https://images.unsplash.com/${id}?q=80&w=${w}&auto=format&fit=crop`;
+
+const MENU = [
+  // BURGUERES
+  { id:"b1", cat:"burgueres", theme:"burger", name:"Torres Clássico Smash", desc:"Blend 160g prensado na chapa, cheddar, alface, tomate e maionese da casa no brioche selado.", price:24.9, img:U("photo-1568901346375-23c9450c58cd"), tag:"Mais pedido", rating:4.9, time:"15-25 min", customizable:"burger" },
+  { id:"b2", cat:"burgueres", theme:"burger", name:"Duplo Lava Bacon", desc:"2x smash 100g, cheddar duplo, bacon crocante, cebola caramelizada e barbecue defumado.", price:34.9, img:U("photo-1553979459-d2229ba7433b"), tag:"Chef 🔥", rating:5.0, time:"15-25 min", customizable:"burger" },
+  { id:"b3", cat:"burgueres", theme:"burger", name:"Imperial Onion", desc:"Smash + onion rings, cheddar, alface americana e molho imperial secreto.", price:29.9, img:U("photo-1571091718767-18b5b1457add"), tag:"Crocante", rating:4.8, time:"15-25 min", customizable:"burger" },
+  { id:"b4", cat:"burgueres", theme:"burger", name:"Cuiabá Picante", desc:"Blend suculento, pepper jack, jalapeños, cebola roxa e maionese de chipotle.", price:31.9, img:U("photo-1550547660-d9450f859349"), tag:"Picante 🌶️", rating:4.9, time:"15-25 min", customizable:"burger" },
+  // COMBOS
+  { id:"c1", cat:"combos", theme:"burger", name:"Combo Casal Torres", desc:"2 Clássicos smash + fritas M + 2 refri lata. Perfeito p/ dividir (ou não).", price:69.9, img:U("photo-1610614819513-58e34989848b"), tag:"-15% hoje", rating:4.9, time:"20-30 min", customizable:"generic" },
+  { id:"c2", cat:"combos", theme:"burger", name:"Combo Família Boraçaí", desc:"3 burgers + fritas G cheddar e bacon + refri 1L + 2 mini açaís 300ml.", price:99.9, img:U("photo-1561758033-d89a9ad46330"), tag:"Família", rating:5.0, time:"25-35 min", customizable:"generic" },
+  { id:"c3", cat:"combos", theme:"burger", name:"Combo Solo Smash + Fritas", desc:"Smash clássico + fritas crocantes + refri lata. O essencial bem feito.", price:32.9, img:U("photo-1550317138-10000687a72b"), tag:"Custo-benefício", rating:4.8, time:"15-25 min", customizable:"generic" },
+  // AÇAÍ
+  { id:"a1", cat:"acai", theme:"acai", name:"Açaí Boraçaí Raiz", desc:"Açaí cremoso batido na hora. Escolha o tamanho e até 5 toppings grátis.", price:16.9, img:U("photo-1490474418585-ba9bad8fd0ea"), tag:"Base 300ml", rating:5.0, time:"10-15 min", customizable:"acai" },
+  { id:"a2", cat:"acai", theme:"acai", name:"Copo Ninho + Nutella Supreme", desc:"Camadas de ninho, Nutella original, morango e granola. O campeão do Instagram.", price:27.9, img:U("photo-1488900128323-21503983a07e"), tag:"Gourmet 🟣", rating:5.0, time:"10-15 min", customizable:"acai" },
+  { id:"a3", cat:"acai", theme:"acai", name:"Boraçaí Energia", desc:"Banana, granola, leite ninho, mel e amendoim. Pré-treino oficial do Imperial.", price:24.9, img:U("photo-1590301157890-4810ed352733"), tag:"Energia ⚡", rating:4.9, time:"10-15 min", customizable:"acai" },
+  { id:"a4", cat:"acai", theme:"acai", name:"Açaí Zero Açúcar", desc:"Zero açúcar, whey opcional e morango. Proteico sem culpa.", price:23.9, img:U("photo-1615478503562-ec2d8aa0e24e"), tag:"Fit", rating:4.8, time:"10-15 min", customizable:"acai" },
+  // ACOMP
+  { id:"f1", cat:"acomp", theme:"neutral", name:"Fritas Crocantes", desc:"Corte rústico, sal de parrilla e maionese da casa.", price:14.9, img:U("photo-1573080496219-bb080dd4f877"), tag:"Clássica", rating:4.8, time:"10-15 min", customizable:"generic" },
+  { id:"f2", cat:"acomp", theme:"neutral", name:"Fritas Cheddar & Bacon", desc:"Cheddar cremoso + bacon crocante + cebolinha. Para compartilhar (teoricamente).", price:24.9, img:U("photo-1541592106381-b31e9677c0e5"), tag:"Indulgente", rating:4.9, time:"10-15 min", customizable:"generic" },
+  { id:"f3", cat:"acomp", theme:"neutral", name:"Onion Rings", desc:"Anéis empanados crocantes + barbecue defumado.", price:18.9, img:U("photo-1639024471283-03518883512d"), tag:"Crocante", rating:4.7, time:"10-15 min", customizable:"generic" },
+  { id:"f4", cat:"acomp", theme:"neutral", name:"Nuggets 10un", desc:"Crocantes + molho imperial.", price:19.9, img:U("photo-1562967914-608f82629710"), tag:"Kids love", rating:4.7, time:"10-15 min", customizable:"generic" },
+  // BEBIDAS
+  { id:"d1", cat:"bebidas", theme:"neutral", name:"Refrigerante Lata 350ml", desc:"Coca, Guaraná, Fanta. Geladíssimo.", price:6.5, img:U("photo-1554866585-cd94860890b7"), tag:"Gelada", rating:4.9, time:"5 min", customizable:"none" },
+  { id:"d2", cat:"bebidas", theme:"neutral", name:"Guaraná 1L / Coca 1,5L", desc:"Para acompanhar o combo família.", price:10.9, img:U("photo-1581636625402-29b2a704ef13"), tag:"Família", rating:4.8, time:"5 min", customizable:"none" },
+  { id:"d3", cat:"bebidas", theme:"neutral", name:"Suco Natural 500ml", desc:"Maracujá, caju, limonada ou abacaxi com hortelã.", price:9.9, img:U("photo-1600271886742-f049cd451bba"), tag:"Natural", rating:4.8, time:"5-10 min", customizable:"none" },
+  { id:"d4", cat:"bebidas", theme:"neutral", name:"Milkshake Ovomaltine 500ml", desc:"Cremoso, com chantilly e crocante por cima.", price:16.9, img:U("photo-1577805947697-89e18249d767"), tag:"Sobremesa", rating:5.0, time:"10 min", customizable:"none" },
+];
+
+const container = { hidden:{}, show:{ transition:{ staggerChildren:0.08 } } };
+const cardV = { hidden:{ opacity:0, y:24, scale:.98 }, show:{ opacity:1, y:0, scale:1, transition:{ type:"spring", stiffness:120, damping:16 } } };
+
+function LazyImg({ src, alt, className="", eager=false }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className={`img-shell ${loaded?"loaded":""} aspect-[4/3] w-full ${className}`}>
+      <img src={src} alt={alt} width="800" height="600"
+        loading={eager?"eager":"lazy"} decoding="async" draggable="false"
+        onLoad={()=>setLoaded(true)} className="h-full w-full object-cover" />
+    </div>
+  );
+}
+
+function Header({ cartCount, onCart, open }) {
+  return (
+    <header className="sticky top-0 z-40 glass border-x-0 border-t-0">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
+        <a href="#top" className="flex items-center gap-3">
+          <div className="relative grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-[#FF3D00] via-[#FF5722] to-[#7E22CE] shadow-lavaglow">
+            <span className="font-display text-xl font-extrabold text-white">TB</span>
+            <span className="absolute -right-1 -top-1 h-3.5 w-3.5 rounded-full bg-[#A855F7] ring-2 ring-[#0A0A0B]"></span>
+          </div>
+          <div className="leading-tight">
+            <p className="font-display text-[15px] font-extrabold">TORRES <span className="text-gradient-lava">BURGUER</span> <span className="text-gradient-berry">& BORAÇAÍ</span></p>
+            <p className="text-[11px] text-zinc-400">Av. das Torres · Jardim Imperial · Cuiabá</p>
+          </div>
+        </a>
+        <div className="flex items-center gap-2">
+          <div className={`hidden items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold sm:flex ${open?"bg-green-500/15 text-green-300 ring-1 ring-green-500/30":"bg-red-500/15 text-red-300 ring-1 ring-red-500/30"}`}>
+            <span className={`h-2 w-2 rounded-full ${open?"bg-green-400 open-dot":"bg-red-400"}`}></span>
+            {open ? "Aberto agora · até 23h30" : "Fechado · abre 18h"}
+          </div>
+          <motion.button whileTap={{scale:.95}} onClick={onCart}
+            className="relative rounded-2xl bg-white px-4 py-2.5 text-sm font-bold text-black transition hover:bg-zinc-200"
+            aria-label="Abrir carrinho">
+            🛒 Sacola
+            <AnimatePresence>
+              {cartCount>0 && (
+                <motion.span key={cartCount} initial={{scale:.4}} animate={{scale:1}} exit={{scale:0}}
+                  transition={{type:"spring",stiffness:500,damping:18}}
+                  className="absolute -right-2 -top-2 grid h-6 min-w-[24px] place-items-center rounded-full bg-[#FF3D00] px-1 text-xs font-extrabold text-white shadow-lavaglow">
+                  {cartCount}
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </motion.button>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function Hero({ onBurger, onAcai, open }) {
+  return (
+    <section id="top" className="relative mx-auto max-w-6xl px-4 pt-8 sm:pt-12">
+      <div className="glass relative overflow-hidden rounded-[28px] p-6 shadow-card sm:p-10">
+        <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#FF3D00]/25 blur-[90px]"></div>
+        <div className="absolute -bottom-24 -right-16 h-80 w-80 rounded-full bg-[#7E22CE]/30 blur-[100px]"></div>
+        <div className="relative grid items-center gap-8 md:grid-cols-2">
+          <div>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1.5 text-xs font-semibold ring-1 ring-white/10">
+              <span className={`h-2 w-2 rounded-full ${open?"bg-green-400 open-dot":"bg-red-400"}`}></span>
+              {open ? "Aberto agora · entrega 25-40 min" : "Abre hoje às 18h"} <span className="text-zinc-500">·</span> <span className="text-amber-300">Cupom BORA10 = 10% OFF</span>
+            </div>
+            <h1 className="font-display text-4xl font-extrabold leading-[0.95] sm:text-6xl">
+              <span className="text-gradient-lava">LAVA BURGER</span><br/>
+              <span className="text-white">+</span> <span className="text-gradient-berry">AÇAÍ ELÉTRICO</span>
+            </h1>
+            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-zinc-300">
+              Smash artesanal suculento + copos gourmet de açaí cremoso. O combo mais viciante da Av. das Torres. Monte, personalize e receba quentinho.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <motion.button whileTap={{scale:.95}} onClick={onBurger}
+                className="rounded-2xl bg-gradient-to-r from-[#FF3D00] to-[#FF5722] px-6 py-3.5 font-display text-sm font-extrabold text-white shadow-lavaglow transition hover:brightness-110">
+                🔥 VER BURGUERES
+              </motion.button>
+              <motion.button whileTap={{scale:.95}} onClick={onAcai}
+                className="rounded-2xl bg-gradient-to-r from-[#7E22CE] to-[#A855F7] px-6 py-3.5 font-display text-sm font-extrabold text-white shadow-berryglow transition hover:brightness-110">
+                🟣 MONTAR MEU AÇAÍ
+              </motion.button>
+            </div>
+            <div className="mt-6 flex gap-6 text-center">
+              {[["4.9★","2.3k avaliações"],["25min","entrega média"],["12k+","pedidos / mês"]].map(([a,b])=>(
+                <div key={a}><p className="font-display text-xl font-extrabold text-white">{a}</p><p className="text-xs text-zinc-400">{b}</p></div>
+              ))}
+            </div>
+          </div>
+          <div className="relative">
+            <div className="floaty overflow-hidden rounded-3xl ring-1 ring-white/15">
+              <img src={U("photo-1568901346375-23c9450c58cd",1200)} alt="Smash burger Torres" width="1200" height="800" fetchpriority="high" className="aspect-[4/3] w-full object-cover" />
+            </div>
+            <motion.div initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{delay:.35}}
+              className="glass absolute -bottom-4 -left-3 rounded-2xl px-4 py-3 sm:-left-6">
+              <p className="text-[11px] font-semibold text-zinc-300">Duplo Lava Bacon</p>
+              <p className="font-display text-lg font-extrabold text-white">R$ 34,90 <span className="ml-1 rounded-full bg-[#FF3D00]/20 px-2 py-0.5 text-[11px] text-orange-300">🔥 best-seller</span></p>
+            </motion.div>
+            <motion.div initial={{opacity:0,y:-12}} animate={{opacity:1,y:0}} transition={{delay:.5}}
+              className="glass absolute -right-2 -top-4 rounded-2xl px-4 py-3 sm:-right-3">
+              <p className="text-[11px] font-semibold text-purple-200">Açaí Supreme 500ml</p>
+              <p className="font-display text-lg font-extrabold text-white">R$ 27,90 <span className="ml-1 rounded-full bg-[#A855F7]/20 px-2 py-0.5 text-[11px] text-purple-300">🟣 gourmet</span></p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CategoryTabs({ cats, active, onChange }) {
+  return (
+    <div className="sticky top-[68px] z-30 -mx-4 bg-[#0A0A0B]/85 px-4 py-3 backdrop-blur-xl">
+      <div className="no-scrollbar mx-auto flex max-w-6xl gap-2 overflow-x-auto">
+        {cats.map(c=>{
+          const isA = c.id===active;
+          const glow = c.theme==="acai" ? "tab-active-acai" : c.theme==="burger" ? "tab-active-burger" : "";
+          return (
+            <button key={c.id} onClick={()=>onChange(c.id)}
+              className={`relative whitespace-nowrap rounded-2xl px-4 py-2.5 text-[13px] font-bold transition ${isA ? `bg-white text-black ${glow}` : "glass-soft text-zinc-300 hover:text-white"}`}>
+              {isA && <motion.span layoutId="tab-pill" className="absolute inset-0 rounded-2xl bg-white" transition={{type:"spring",stiffness:400,damping:30}} />}
+              <span className={`relative ${isA?"text-black":""}`}>{c.icon} {c.label}</span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function MenuCard({ item, onAdd, index }) {
+  const themed = item.theme==="acai";
+  return (
+    <motion.article variants={cardV} layout
+      className={`glass group overflow-hidden rounded-3xl shadow-card transition hover:-translate-y-1 ${themed?"hover:shadow-berryglow":"hover:shadow-lavaglow"}`}>
+      <div className="relative">
+        <LazyImg src={item.img} alt={item.name} eager={index<2} />
+        <span className={`absolute left-3 top-3 rounded-full px-2.5 py-1 text-[11px] font-extrabold ring-1 ${themed?"bg-[#2E1065]/85 text-purple-200 ring-purple-400/30":"bg-black/70 text-orange-200 ring-orange-500/30"}`}>{item.tag}</span>
+        <span className="absolute bottom-3 right-3 rounded-full bg-black/70 px-2.5 py-1 text-[11px] font-semibold text-zinc-200 backdrop-blur">⭐ {item.rating.toFixed(1)} · {item.time}</span>
+      </div>
+      <div className="p-4">
+        <h3 className="font-display text-[17px] font-extrabold leading-tight text-white">{item.name}</h3>
+        <p className="mt-1.5 line-clamp-2 min-h-[40px] text-[13px] leading-relaxed text-zinc-400">{item.desc}</p>
+        <div className="mt-3 flex items-center justify-between">
+          <p className={`font-display text-xl font-extrabold ${themed?"text-gradient-berry":"text-gradient-lava"}`}>{brl(item.price)}</p>
+          <motion.button whileTap={{scale:.95}} onClick={()=>onAdd(item)}
+            className={`rounded-xl px-4 py-2.5 text-[13px] font-extrabold text-white transition hover:brightness-110 ${themed?"bg-gradient-to-r from-[#7E22CE] to-[#A855F7] shadow-berryglow":"bg-gradient-to-r from-[#FF3D00] to-[#FF5722] shadow-lavaglow"}`}>
+            {item.customizable==="none" ? "+ Adicionar" : "Montar +"}
+          </motion.button>
+        </div>
+      </div>
+    </motion.article>
+  );
+}
+
+function BuilderModal({ item, onClose, onConfirm }) {
+  const [doneness, setDoneness] = useState("Ao ponto");
+  const [extras, setExtras] = useState([]);
+  const [size, setSize] = useState(ACAI_SIZES[1]);
+  const [freeTop, setFreeTop] = useState(["Banana","Leite Ninho"]);
+  const [paidTop, setPaidTop] = useState([]);
+  const [qty, setQty] = useState(1);
+  const [obs, setObs] = useState("");
+
+  if(!item) return null;
+  const isBurger = item.customizable==="burger";
+  const isAcai = item.customizable==="acai";
+  const themed = item.theme==="acai" || isAcai;
+
+  const toggle = (list,set,v) => set(list.includes(v)?list.filter(x=>x!==v):[...list,v]);
+  const toggleFree = (t) => {
+    if(freeTop.includes(t)) setFreeTop(freeTop.filter(x=>x!==t));
+    else { if(freeTop.length>=size.free) { setFreeTop([...freeTop.slice(1), t]); } else setFreeTop([...freeTop,t]); }
+  };
+
+  const unit = useMemo(()=>{
+    let base = item.price;
+    if(isAcai){ base = 16.9 * size.mult; if(item.id==="a2") base = Math.max(base, 21.9*size.mult/1.35); }
+    const ex = extras.reduce((s,id)=>s+(BURGER_EXTRAS.find(e=>e.id===id)?.price||0),0)
+      + paidTop.reduce((s,id)=>s+(ACAI_PAID.find(e=>e.id===id)?.price||0),0)
+      + (isBurger||(!isAcai&&!isBurger) ? 0:0);
+    const gen = (!isBurger&&!isAcai) ? extras.reduce((s,id)=>s+(GENERIC_ADDONS.find(e=>e.id===id)?.price||0),0) : 0;
+    return base + ex + gen;
+  },[item,isAcai,isBurger,size,extras,paidTop]);
+
+  const confirm = () => {
+    const details = [];
+    if(isBurger){ details.push(`Ponto: ${doneness}`); extras.forEach(id=>{const e=BURGER_EXTRAS.find(x=>x.id===id); if(e) details.push(`+ ${e.name} (${brl(e.price)})`);}); }
+    if(isAcai){ details.push(`Tamanho: ${size.label}`); if(freeTop.length) details.push(`Grátis: ${freeTop.join(", ")}`); paidTop.forEach(id=>{const e=ACAI_PAID.find(x=>x.id===id); if(e) details.push(`+ ${e.name} (${brl(e.price)})`);}); }
+    if(!isBurger&&!isAcai&&item.customizable==="generic"){ extras.forEach(id=>{const e=GENERIC_ADDONS.find(x=>x.id===id); if(e) details.push(`+ ${e.name} (${brl(e.price)})`);}); }
+    if(sanitize(obs)) details.push(`Obs: ${sanitize(obs)}`);
+    onConfirm({ item, qty, unit, details });
+  };
+
+  return (
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="fixed inset-0 z-50 grid items-end justify-center bg-black/70 p-0 backdrop-blur-sm sm:items-center sm:p-4" onClick={onClose}>
+      <motion.div initial={{y:120,scale:.98}} animate={{y:0,scale:1}} exit={{y:120,opacity:0}} transition={{type:"spring",stiffness:260,damping:26}}
+        onClick={e=>e.stopPropagation()} className="glass max-h-[92dvh] w-full max-w-lg overflow-y-auto rounded-t-[28px] p-5 sm:rounded-[28px] sm:p-6">
+        <div className="mx-auto mb-4 h-1.5 w-12 rounded-full bg-white/15 sm:hidden"></div>
+        <div className="flex gap-4">
+          <img src={item.img} alt={item.name} className="h-20 w-20 rounded-2xl object-cover ring-1 ring-white/15" />
+          <div className="flex-1">
+            <h3 className="font-display text-lg font-extrabold text-white">{item.name}</h3>
+            <p className={`font-display text-xl font-extrabold ${themed?"text-gradient-berry":"text-gradient-lava"}`}>{brl(unit)} <span className="text-xs font-semibold text-zinc-400">/ un.</span></p>
+          </div>
+          <button onClick={onClose} className="h-9 w-9 rounded-xl bg-white/10 text-zinc-300 hover:bg-white/20" aria-label="Fechar">✕</button>
+        </div>
+
+        {isBurger && (
+          <div className="mt-5">
+            <p className="font-display text-sm font-extrabold text-orange-200">🔥 PONTO DA CARNE</p>
+            <div className="mt-2 grid grid-cols-2 gap-2">
+              {["Ao ponto","Bem passado"].map(p=>(
+                <button key={p} onClick={()=>setDoneness(p)} className={`rounded-2xl px-4 py-3 text-sm font-bold ring-1 transition ${doneness===p?"bg-gradient-to-r from-[#FF3D00] to-[#FF5722] text-white ring-transparent shadow-lavaglow":"bg-white/5 text-zinc-300 ring-white/10"}`}>{p}</button>
+              ))}
+            </div>
+            <p className="mt-5 font-display text-sm font-extrabold text-orange-200">➕ TURBINE SEU BURGER</p>
+            <div className="mt-2 space-y-2">
+              {BURGER_EXTRAS.map(e=>(
+                <label key={e.id} className={`flex cursor-pointer items-center justify-between rounded-2xl px-4 py-3 ring-1 transition ${extras.includes(e.id)?"bg-[#FF3D00]/10 ring-[#FF3D00]/50":"bg-white/5 ring-white/10"}`}>
+                  <span className="flex items-center gap-3 text-sm"><input type="checkbox" checked={extras.includes(e.id)} onChange={()=>toggle(extras,setExtras,e.id)} className="h-4 w-4 accent-[#FF3D00]" />{e.name}</span>
+                  <span className="text-sm font-bold text-orange-300">+{brl(e.price)}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {isAcai && (
+          <div className="mt-5">
+            <p className="font-display text-sm font-extrabold text-purple-200">🟣 TAMANHO DO COPO</p>
+            <div className="mt-2 grid grid-cols-3 gap-2">
+              {ACAI_SIZES.map(s=>(
+                <button key={s.id} onClick={()=>{setSize(s); setFreeTop([]);}} className={`rounded-2xl px-2 py-3 text-center ring-1 transition ${size.id===s.id?"bg-gradient-to-b from-[#7E22CE] to-[#A855F7] text-white ring-transparent shadow-berryglow":"bg-white/5 text-zinc-300 ring-white/10"}`}>
+                  <span className="block font-display text-sm font-extrabold">{s.label}</span>
+                  <span className="block text-[11px] opacity-80">{s.free} grátis</span>
+                </button>
+              ))}
+            </div>
+            <p className="mt-1 text-[11px] text-zinc-400">{size.desc} · até {size.free} toppings grátis (ao escolher o {size.free+1}º, o primeiro sai).</p>
+            <p className="mt-4 font-display text-sm font-extrabold text-purple-200">✅ TOPPINGS GRÁTIS ({freeTop.length}/{size.free})</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {ACAI_FREE.map(t=>(
+                <button key={t} onClick={()=>toggleFree(t)} className={`rounded-full px-3.5 py-2 text-[13px] font-semibold ring-1 transition ${freeTop.includes(t)?"bg-[#A855F7] text-white ring-transparent shadow-berryglow":"bg-white/5 text-zinc-300 ring-white/10"}`}>{t}</button>
+              ))}
+            </div>
+            <p className="mt-4 font-display text-sm font-extrabold text-purple-200">💜 EXTRAS PREMIUM</p>
+            <div className="mt-2 space-y-2">
+              {ACAI_PAID.map(e=>(
+                <label key={e.id} className={`flex cursor-pointer items-center justify-between rounded-2xl px-4 py-3 ring-1 transition ${paidTop.includes(e.id)?"bg-[#A855F7]/15 ring-[#A855F7]/60":"bg-white/5 ring-white/10"}`}>
+                  <span className="flex items-center gap-3 text-sm"><input type="checkbox" checked={paidTop.includes(e.id)} onChange={()=>toggle(paidTop,setPaidTop,e.id)} className="h-4 w-4 accent-[#A855F7]" />{e.name}</span>
+                  <span className="text-sm font-bold text-purple-300">+{brl(e.price)}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {(!isBurger&&!isAcai&&item.customizable==="generic") && (
+          <div className="mt-5">
+            <p className="font-display text-sm font-extrabold text-zinc-200">➕ ADICIONAIS</p>
+            <div className="mt-2 space-y-2">
+              {GENERIC_ADDONS.map(e=>(
+                <label key={e.id} className={`flex cursor-pointer items-center justify-between rounded-2xl px-4 py-3 ring-1 ${extras.includes(e.id)?"bg-white/10 ring-white/30":"bg-white/5 ring-white/10"}`}>
+                  <span className="flex items-center gap-3 text-sm"><input type="checkbox" checked={extras.includes(e.id)} onChange={()=>toggle(extras,setExtras,e.id)} className="h-4 w-4 accent-white" />{e.name}</span>
+                  <span className="text-sm font-bold">+{brl(e.price)}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="mt-5">
+          <label className="text-xs font-semibold text-zinc-400">Observações (ex: sem cebola, bem gelado)</label>
+          <input value={obs} onChange={e=>setObs(e.target.value)} maxLength={140} placeholder="Opcional…" className="mt-1.5 w-full rounded-2xl bg-white/5 px-4 py-3 text-sm text-white ring-1 ring-white/10 placeholder:text-zinc-500" />
+        </div>
+
+        <div className="mt-5 flex items-center gap-3">
+          <div className="flex items-center gap-3 rounded-2xl bg-white/5 px-2 py-2 ring-1 ring-white/10">
+            <button onClick={()=>setQty(Math.max(1,qty-1))} className="grid h-9 w-9 place-items-center rounded-xl bg-white/10 text-lg font-bold">−</button>
+            <span className="w-6 text-center font-display font-extrabold">{qty}</span>
+            <button onClick={()=>setQty(Math.min(10,qty+1))} className="grid h-9 w-9 place-items-center rounded-xl bg-white text-lg font-bold text-black">+</button>
+          </div>
+          <motion.button whileTap={{scale:.97}} onClick={confirm}
+            className={`flex-1 rounded-2xl px-4 py-3.5 font-display text-sm font-extrabold text-white ${themed?"bg-gradient-to-r from-[#7E22CE] to-[#A855F7] shadow-berryglow":"bg-gradient-to-r from-[#FF3D00] to-[#FF5722] shadow-lavaglow"}`}>
+            ADICIONAR · {brl(unit*qty)}
+          </motion.button>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+function CheckoutDrawer({ cart, setQty, removeItem, subtotal, fee, total, open, onClose, form, setForm, onOrder, lockLeft, errors }) {
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm" onClick={onClose}>
+          <motion.aside initial={{x:"100%"}} animate={{x:0}} exit={{x:"100%"}} transition={{type:"spring",stiffness:280,damping:30}}
+            onClick={e=>e.stopPropagation()} className="absolute right-0 top-0 flex h-[100dvh] w-full max-w-md flex-col bg-[#121212] ring-1 ring-white/10">
+            <div className="flex items-center justify-between border-b border-white/10 p-5">
+              <h3 className="font-display text-lg font-extrabold">🛒 Sua sacola <span className="text-sm font-semibold text-zinc-400">({cart.reduce((s,i)=>s+i.qty,0)} itens)</span></h3>
+              <button onClick={onClose} className="grid h-9 w-9 place-items-center rounded-xl bg-white/10" aria-label="Fechar sacola">✕</button>
+            </div>
+            <div className="flex-1 overflow-y-auto p-5">
+              {cart.length===0 ? (
+                <div className="grid place-items-center py-16 text-center">
+                  <p className="text-5xl">🍔</p>
+                  <p className="mt-3 font-display font-extrabold">Sacola vazia… por enquanto</p>
+                  <p className="mt-1 text-sm text-zinc-400">Que tal um Duplo Lava + Açaí Supreme?</p>
+                  <button onClick={onClose} className="mt-5 rounded-2xl bg-white px-5 py-3 text-sm font-bold text-black">Ver cardápio</button>
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {cart.map(ci=>(
+                    <div key={ci.key} className="glass-soft rounded-2xl p-3.5">
+                      <div className="flex justify-between gap-2">
+                        <p className="text-sm font-bold text-white">{ci.qty}x {ci.name}</p>
+                        <button onClick={()=>removeItem(ci.key)} className="text-xs text-zinc-500 hover:text-red-400">remover</button>
+                      </div>
+                      {ci.details.map((d,i)=><p key={i} className="mt-0.5 text-xs text-zinc-400">· {d}</p>)}
+                      <div className="mt-2.5 flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <button onClick={()=>setQty(ci.key,ci.qty-1)} className="grid h-8 w-8 place-items-center rounded-lg bg-white/10 font-bold">−</button>
+                          <span className="w-5 text-center text-sm font-bold">{ci.qty}</span>
+                          <button onClick={()=>setQty(ci.key,ci.qty+1)} className="grid h-8 w-8 place-items-center rounded-lg bg-white/10 font-bold">+</button>
+                        </div>
+                        <p className="font-display text-sm font-extrabold">{brl(ci.unit*ci.qty)}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {cart.length>0 && (
+                <div className="mt-5 space-y-3 rounded-2xl bg-white/[.03] p-4 ring-1 ring-white/10">
+                  <p className="font-display text-sm font-extrabold">📍 ENTREGA — Cuiabá/MT</p>
+                  <div>
+                    <input value={form.name} onChange={e=>setForm({...form,name:e.target.value})} placeholder="Seu nome *" maxLength={60}
+                      className={`w-full rounded-xl bg-white/5 px-4 py-3 text-sm ring-1 ${errors.name?"ring-red-500":"ring-white/10"}`} />
+                    {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name}</p>}
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <select value={form.hood} onChange={e=>setForm({...form,hood:e.target.value})} className="rounded-xl bg-white/5 px-3 py-3 text-sm ring-1 ring-white/10">
+                      {NEIGHBORHOODS.map(n=><option key={n} value={n}>{n} · {brl(DELIVERY_FEES[n])}</option>)}
+                    </select>
+                    <input value={form.number} onChange={e=>setForm({...form,number:e.target.value})} placeholder="Nº / Apto" maxLength={20} className="rounded-xl bg-white/5 px-4 py-3 text-sm ring-1 ring-white/10" />
+                  </div>
+                  <div>
+                    <input value={form.street} onChange={e=>setForm({...form,street:e.target.value})} placeholder="Rua / Avenida * (ex: Av. das Torres, 1234)" maxLength={120}
+                      className={`w-full rounded-xl bg-white/5 px-4 py-3 text-sm ring-1 ${errors.street?"ring-red-500":"ring-white/10"}`} />
+                    {errors.street && <p className="mt-1 text-xs text-red-400">{errors.street}</p>}
+                  </div>
+                  <div>
+                    <p className="mb-2 text-xs font-bold text-zinc-300">💳 PAGAMENTO</p>
+                    <div className="grid grid-cols-3 gap-2">
+                      {[["Pix","⚡"],["Cartão","💳"],["Dinheiro","💵"]].map(([p,ic])=>(
+                        <button key={p} onClick={()=>setForm({...form,pay:p})} className={`rounded-xl px-2 py-2.5 text-[13px] font-bold ring-1 ${form.pay===p?"bg-white text-black":"bg-white/5 text-zinc-300 ring-white/10"}`}>{ic} {p}</button>
+                      ))}
+                    </div>
+                    {form.pay==="Dinheiro" && (
+                      <input value={form.change} onChange={e=>setForm({...form,change:e.target.value})} inputMode="numeric" placeholder="Troco para quanto? (ex: 100)" className="mt-2 w-full rounded-xl bg-white/5 px-4 py-3 text-sm ring-1 ring-white/10" />
+                    )}
+                    {form.pay==="Pix" && <p className="mt-2 rounded-xl bg-green-500/10 px-3 py-2 text-xs text-green-300 ring-1 ring-green-500/20">Chave Pix enviada no WhatsApp após confirmar. ⚡</p>}
+                  </div>
+                  <textarea value={form.notes} onChange={e=>setForm({...form,notes:e.target.value})} placeholder="Complemento / referência (opcional)" rows={2} maxLength={140} className="w-full rounded-xl bg-white/5 px-4 py-3 text-sm ring-1 ring-white/10" />
+                </div>
+              )}
+            </div>
+            {cart.length>0 && (
+              <div className="border-t border-white/10 bg-[#0d0d0e] p-5">
+                <div className="space-y-1 text-sm">
+                  <div className="flex justify-between text-zinc-400"><span>Subtotal</span><span>{brl(subtotal)}</span></div>
+                  <div className="flex justify-between text-zinc-400"><span>Entrega · {form.hood}</span><span>{fee===0?"Grátis":brl(fee)}</span></div>
+                  <div className="flex justify-between font-display text-lg font-extrabold text-white"><span>Total</span><span className="text-gradient-mix">{brl(total)}</span></div>
+                </div>
+                <motion.button whileTap={{scale:.97}} onClick={onOrder} disabled={lockLeft>0}
+                  className={`mt-4 w-full rounded-2xl px-4 py-4 font-display text-[15px] font-extrabold text-white transition ${lockLeft>0?"bg-zinc-700":"bg-gradient-to-r from-[#25D366] to-[#128C7E] shadow-[0_0_24px_rgba(37,211,102,.4)] hover:brightness-110"}`}>
+                  {lockLeft>0 ? `AGUARDE ${lockLeft}s… (anti-spam)` : "✅ FINALIZAR NO WHATSAPP"}
+                </motion.button>
+                <p className="mt-2 text-center text-[11px] text-zinc-500">🔒 Pedido criptografado via WhatsApp · sem cadastro · {new Date().getFullYear()}</p>
+              </div>
+            )}
+          </motion.aside>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+function App(){
+  const [active, setActive] = useState("burgueres");
+  const [query, setQuery] = useState("");
+  const [cart, setCart] = useState([]);
+  const [builder, setBuilder] = useState(null);
+  const [drawer, setDrawer] = useState(false);
+  const [toast, setToast] = useState("");
+  const [lockLeft, setLockLeft] = useState(0);
+  const [form, setForm] = useState({ name:"", hood:"Jardim Imperial", street:"", number:"", pay:"Pix", change:"", notes:"" });
+  const [errors, setErrors] = useState({});
+  const lastOrder = useRef(0);
+  const open = isOpenNow();
+  const activeCat = CATEGORIES.find(c=>c.id===active);
+  const theme = activeCat?.theme || "burger";
+
+  useEffect(()=>{ if(!toast) return; const t=setTimeout(()=>setToast(""),2600); return ()=>clearTimeout(t); },[toast]);
+  useEffect(()=>{ if(lockLeft<=0) return; const t=setTimeout(()=>setLockLeft(l=>l-1),1000); return ()=>clearTimeout(t); },[lockLeft]);
+
+  const filtered = useMemo(()=>{
+    const q = query.trim().toLowerCase();
+    return MENU.filter(m=>m.cat===active && (!q || (m.name+" "+m.desc).toLowerCase().includes(q)));
+  },[active,query]);
+
+  const cartCount = cart.reduce((s,i)=>s+i.qty,0);
+  const subtotal = cart.reduce((s,i)=>s+i.unit*i.qty,0);
+  const fee = cart.length? (DELIVERY_FEES[form.hood] ?? 7) : 0;
+  const total = subtotal + fee;
+
+  const quickAdd = (item) => {
+    if(item.customizable==="none"){
+      setCart(prev=>{
+        const key = item.id+"|plain";
+        const ex = prev.find(p=>p.key===key);
+        if(ex) return prev.map(p=>p.key===key?{...p,qty:Math.min(10,p.qty+1)}:p);
+        return [...prev,{key,itemId:item.id,name:item.name,unit:item.price,qty:1,details:[]}];
+      });
+      setToast(`${item.name} na sacola ✅`);
+    } else setBuilder(item);
+  };
+
+  const confirmBuilder = ({item,qty,unit,details}) => {
+    const key = item.id+"|"+details.join("~")+"~"+Date.now();
+    setCart(prev=>[...prev,{key,itemId:item.id,name:item.name,unit,qty,details}]);
+    setBuilder(null); setToast(`${item.name} personalizado ✅`); setDrawer(true);
+  };
+
+  const buildMessage = () => {
+    const lines = [];
+    lines.push("*🍔 TORRES BURGUER & BORAÇAÍ — NOVO PEDIDO*");
+    lines.push(`⏰ ${new Date().toLocaleString("pt-BR")} ${open?"(dentro do horário)":"(agendamento)"}`);
+    lines.push("--------------------------");
+    cart.forEach((ci,i)=>{
+      lines.push(`*${i+1}. ${ci.qty}x ${ci.name}* — ${brl(ci.unit*ci.qty)}`);
+      ci.details.forEach(d=>lines.push(`   · ${d}`));
+    });
+    lines.push("--------------------------");
+    lines.push(`Subtotal: ${brl(subtotal)}`);
+    lines.push(`Entrega (${form.hood}): ${fee===0?"Grátis":brl(fee)}`);
+    lines.push(`*TOTAL: ${brl(total)}*`);
+    lines.push("--------------------------");
+    lines.push(`👤 Nome: ${form.name}`);
+    lines.push(`📍 Endereço: ${form.street}${form.number?`, ${form.number}`:""} — ${form.hood}, Cuiabá/MT`);
+    if(form.notes) lines.push(`📝 Ref: ${form.notes}`);
+    lines.push(`💳 Pagamento: ${form.pay}${form.pay==="Dinheiro"&&form.change?` (troco p/ R$ ${form.change})`:""}`);
+    lines.push("--------------------------");
+    lines.push("Cupom: BORA10 (se aplicável) 🏷️");
+    return lines.join("\n");
+  };
+
+  const placeOrder = () => {
+    // DDoS / spam guard: 3s lockout (client-side rate limiting)
+    const now = Date.now();
+    if(now - lastOrder.current < 3000){ setLockLeft(Math.ceil((3000-(now-lastOrder.current))/1000)); return; }
+    // sanitize + validate
+    const name = sanitize(form.name), street = sanitize(form.street),
+          number = sanitize(form.number), notes = sanitize(form.notes), change = sanitize(form.change);
+    const e = {};
+    if(!NAME_RE.test(name)) e.name = "Digite seu nome (2-60 letras, sem números).";
+    if(!STREET_RE.test(street)) e.street = "Endereço inválido — ex: Av. das Torres, 1234.";
+    if(cart.length===0) { setToast("Sacola vazia"); return; }
+    setErrors(e);
+    if(Object.keys(e).length) { setToast("Confira nome e endereço ⚠️"); return; }
+    setForm(f=>({...f,name,street,number,notes,change}));
+    lastOrder.current = now; setLockLeft(3);
+    const url = `https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(buildMessage())}`;
+    window.open(url,"_blank","noopener");
+    setToast("Pedido enviado p/ WhatsApp! 🚀");
+  };
+
+  const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({behavior:"smooth"});
+
+  return (
+    <div className="min-h-[100dvh]">
+      <div className="bg-gradient-to-r from-[#FF3D00] via-[#a33] to-[#7E22CE] px-4 py-2 text-center text-[12px] font-bold text-white">
+        🏷️ Use <span className="rounded bg-black/40 px-1.5 py-0.5 font-extrabold">BORA10</span> no WhatsApp e ganhe 10% OFF em combos · Entrega Jardim Imperial R$ 5
+      </div>
+      <Header cartCount={cartCount} onCart={()=>setDrawer(true)} open={open} />
+      <Hero onBurger={()=>{setActive("burgueres");scrollTo("cardapio");}} onAcai={()=>{setActive("acai");scrollTo("cardapio");}} open={open} />
+
+      <main id="cardapio" className="mx-auto max-w-6xl scroll-mt-32 px-4">
+        <div className="mt-8 flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
+              Cardápio <span className={theme==="acai"?"text-gradient-berry":theme==="burger"?"text-gradient-lava":"text-white"}>{activeCat.label}</span>
+            </h2>
+            <p className="mt-1 text-sm text-zinc-400">Toque em <b>Montar +</b> para personalizar ponto, tamanho e toppings.</p>
+          </div>
+          <div className="relative w-full sm:w-72">
+            <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="🔍 Buscar… ex: bacon, nutella, fritas" className="w-full rounded-2xl bg-white/5 px-4 py-3 text-sm ring-1 ring-white/10 placeholder:text-zinc-500" />
+          </div>
+        </div>
+
+        <CategoryTabs cats={CATEGORIES} active={active} onChange={(id)=>{setActive(id);setQuery("");}} />
+
+        <motion.div variants={container} initial="hidden" animate="show" key={active+query}
+          className="grid grid-cols-1 gap-4 pb-10 pt-4 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((m,i)=><MenuCard key={m.id} item={m} index={i} onAdd={quickAdd} />)}
+          {filtered.length===0 && (
+            <div className="col-span-full grid place-items-center rounded-3xl border border-dashed border-white/15 py-14 text-center">
+              <p className="text-3xl">🔍</p><p className="mt-2 font-bold">Nada por aqui com “{query}”</p>
+              <button onClick={()=>setQuery("")} className="mt-3 rounded-xl bg-white/10 px-4 py-2 text-sm font-bold">Limpar busca</button>
+            </div>
+          )}
+        </motion.div>
+
+        {/* trust / info */}
+        <section className="grid gap-4 pb-12 md:grid-cols-3">
+          {[
+            ["📍 Onde estamos","Av. das Torres, Jardim Imperial — Cuiabá/MT. Retirada e delivery.","burger"],
+            ["⏰ Horário","Seg–Dom · 18h às 23h30. Cozinha fecha 23h.", "neutral"],
+            ["⚡ Entrega média","25–40 min no Imperial/Tijucal. Açaí sai em 10–15 min.","acai"],
+          ].map(([t,d,kind])=>(
+            <div key={t} className={`glass rounded-3xl p-5 ${kind==="acai"?"shadow-berryglow":kind==="burger"?"shadow-lavaglow":""}`}>
+              <p className="font-display font-extrabold">{t}</p><p className="mt-1 text-sm text-zinc-400">{d}</p>
+              <a href={`https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent("Olá! Quero fazer um pedido na Torres Burguer & Boraçaí 🍔🟣")}`} target="_blank" rel="noreferrer" className="mt-3 inline-block rounded-xl bg-white/10 px-4 py-2 text-[13px] font-bold hover:bg-white/20">Chamar no WhatsApp</a>
+            </div>
+          ))}
+        </section>
+      </main>
+
+      <footer className="border-t border-white/10 bg-black/40 px-4 py-8 text-center">
+        <p className="font-display font-extrabold">TORRES <span className="text-gradient-lava">BURGUER</span> <span className="text-gradient-berry">& BORAÇAÍ</span></p>
+        <p className="mt-1 text-xs text-zinc-500">Feito com 🔥 e 🟣 em Cuiabá · Av. das Torres · +55 65 8427-0488 · © {new Date().getFullYear()}</p>
+      </footer>
+
+      {/* floating cart (mobile-first conversion) */}
+      <AnimatePresence>
+        {cartCount>0 && !drawer && (
+          <motion.button initial={{y:80}} animate={{y:0}} exit={{y:80}} whileTap={{scale:.97}}
+            onClick={()=>setDrawer(true)}
+            className="fixed inset-x-4 bottom-4 z-40 flex items-center justify-between rounded-2xl bg-white px-5 py-4 text-black shadow-2xl sm:left-auto sm:right-6 sm:w-96">
+            <span className="text-sm font-bold">🛒 {cartCount} {cartCount===1?"item":"itens"} · <span className="font-display font-extrabold">{brl(total)}</span></span>
+            <span className="rounded-xl bg-black px-4 py-2 text-sm font-extrabold text-white">Finalizar →</span>
+          </motion.button>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>{builder && <BuilderModal item={builder} onClose={()=>setBuilder(null)} onConfirm={confirmBuilder} />}</AnimatePresence>
+      <CheckoutDrawer cart={cart} setQty={(k,q)=>{ if(q<=0) setCart(c=>c.filter(i=>i.key!==k)); else setCart(c=>c.map(i=>i.key===k?{...i,qty:Math.min(10,q)}:i)); }}
+        removeItem={(k)=>setCart(c=>c.filter(i=>i.key!==k))} subtotal={subtotal} fee={fee} total={total}
+        open={drawer} onClose={()=>setDrawer(false)} form={form} setForm={setForm} onOrder={placeOrder} lockLeft={lockLeft} errors={errors} />
+
+      <AnimatePresence>
+        {toast && <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} exit={{opacity:0,y:20}} className="fixed bottom-24 left-1/2 z-[60] -translate-x-1/2 whitespace-nowrap rounded-2xl bg-white px-5 py-3 text-sm font-bold text-black shadow-2xl">{toast}</motion.div>}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
