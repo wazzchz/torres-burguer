@@ -1,0 +1,16 @@
+{
+  "name": "torres-burguer-boracai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Torres Burguer & Boracai — single-file app (React + Tailwind + Framer Motion via CDN)",
+  "type": "module",
+  "scripts": {
+    "dev": "serve . -l 3000 --no-clipboard",
+    "start": "serve . -l 3000 --no-clipboard",
+    "build": "node ./build.mjs",
+    "preview": "serve dist -l 4173 --no-clipboard"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
